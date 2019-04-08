@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #result{
+               width: 500px;
+        height: 30px;
+        background-color: white;
+        text-align: center;
+       border-width: 1px 1px 5px 5px;
+        }
+        #clicker{
+        position: relative;
+        left: 350px;
+            width: 502px;
+            height: 400px;
+        background-color: black;
+        }
+        h2{
+            text-align: center;
+            color: white;
+        }
+        #clicktable{
+            text-decoration: none;  
+            width: 60%;
+            height: 20%;
+            background-color: darkgrey;
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+            left: 20%;
+           top: 70%;
+                        
+        }
+        #clicktable1{
+            text-decoration: none;  
+            width: 5%;
+            height: 2%;
+            background-color: darkgrey;
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+            left: 1%;
+           top: 97%;
+                        
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="clicker">
+    <h2>счет</h2>
+    <input disabled type="text" name="input" id="result">
+    <button id="clicktable">click me</button>
+    <button id="clicktable1"></button>
+</div>    
+
+    <script>
+        let btnClicker = document.getElementById('clicktable');
+        let reschet = document.getElementById('result');
+        let btn100 = document.getElementById('clicktable1');
+        let k = 0;
+           
+        btnClicker.addEventListener('click',function(){
+            k+=1;
+            reschet.value = k;
+            if (k>=100 && k<500) {
+                k+=2;
+            }else if(k>=500 && k<1000){
+                k+=5;
+            }else if (k>=1000 && k<5000) {
+                k+=10;
+            }else if (k>=5000 && k<=10000){
+                k+=20;
+            }else if (k>100000) {
+                reschet.value = 'вы прошли мой кликер.если хотите начать заново переключите страницу';
+            
+            }
+            
+        });
+        btn100.addEventListener('click',function(){
+            k+=100;
+            reschet.value = k;
+            btn100 .disabled = true;
+        });
+    
+         
+        
+ 
+    </script>
+</body>
+</html>
